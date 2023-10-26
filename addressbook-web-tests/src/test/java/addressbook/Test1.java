@@ -40,24 +40,17 @@ public class Test1 {
     public void setUp()   {
         System.setProperty("Webdriver.chrome.driver", "C:\\Users\\rid90\\IdeaProjects\\mavenProject\\drivers\\chromedriver\\chromedriver.exe");//запуск драйвера для браузера
         driver = new ChromeDriver();//запуск браузера
+        driver.manage().window().setSize(new Dimension(1394, 816));
         driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);//Установка задержки для загрузки страницы
         driver.get("https://habr.com/ru/articles/");//Открытие страницы сайта
-
-
-
-
         js = (JavascriptExecutor) driver;
         vars = new HashMap<String, Object>();
     }
-    @After
-    public void tearDown() {
-        driver.quit();
-    }
+
     @Test
-    public void setUP() {
-        driver.get("https://habr.com/ru/articles/");
-        driver.manage().window().setSize(new Dimension(1394, 816));
-        {
+    public void testGroup() {
+
+         {
             WebElement element = driver.findElement(By.linkText("Разработка"));
             Actions builder = new Actions(driver);
             builder.moveToElement(element).perform();
@@ -128,45 +121,10 @@ public class Test1 {
             Actions builder = new Actions(driver);
             builder.moveToElement(element, 0, 0).perform();
         }
-        {
-            WebElement element = driver.findElement(By.cssSelector("#\\37 69466 .tm-publication-hub__link-container:nth-child(2) span"));
-            Actions builder = new Actions(driver);
-            builder.moveToElement(element).perform();
-        }
-        driver.findElement(By.cssSelector(".article-formatted-body > img")).click();
-        driver.findElement(By.cssSelector(".tm-tabs__tab-link_active")).click();
-        driver.findElement(By.cssSelector(".tm-tabs__tab-item:nth-child(3) > .tm-tabs__tab-link")).click();
-        {
-            WebElement element = driver.findElement(By.cssSelector(".tm-tabs__tab-item:nth-child(4) > .tm-tabs__tab-link"));
-            Actions builder = new Actions(driver);
-            builder.moveToElement(element).perform();
-        }
-        driver.findElement(By.cssSelector(".tm-tabs__tab-item:nth-child(4) > .tm-tabs__tab-link")).click();
-        {
-            WebElement element = driver.findElement(By.cssSelector(".router-link-exact-active"));
-            Actions builder = new Actions(driver);
-            builder.moveToElement(element).perform();
-        }
-        {
-            WebElement element = driver.findElement(By.tagName("body"));
-            Actions builder = new Actions(driver);
-            builder.moveToElement(element, 0, 0).perform();
-        }
-        {
-            WebElement element = driver.findElement(By.cssSelector(".tm-tabs__tab-item:nth-child(6) > .tm-tabs__tab-link"));
-            Actions builder = new Actions(driver);
-            builder.moveToElement(element).perform();
-        }
-        driver.findElement(By.cssSelector(".tm-tabs__tab-item:nth-child(6) > .tm-tabs__tab-link")).click();
-        {
-            WebElement element = driver.findElement(By.cssSelector(".router-link-exact-active"));
-            Actions builder = new Actions(driver);
-            builder.moveToElement(element).perform();
-        }
-        {
-            WebElement element = driver.findElement(By.tagName("body"));
-            Actions builder = new Actions(driver);
-            builder.moveToElement(element, 0, 0).perform();
-        }
+
+    }
+    @After
+    public void tearDown() {
+        driver.quit();
     }
 }
