@@ -35,6 +35,7 @@ public class Test1 {
 
     private Map<String, Object> vars;
     JavascriptExecutor js;
+    
 
     @Before
     public void setUp()   {
