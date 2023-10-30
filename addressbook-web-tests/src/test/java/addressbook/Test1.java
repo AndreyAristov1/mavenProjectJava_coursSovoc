@@ -1,5 +1,6 @@
-package addressbook;
 
+
+import addressbook.TestBase;
 import org.junit.Test;
 import org.junit.Before;
 import org.junit.After;
@@ -25,28 +26,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
-public class Test1 {
+public class Test1 extends TestBase {
 
-
-    private WebDriver driver;
-
-
-
-
-    private Map<String, Object> vars;
-    JavascriptExecutor js;
-    
-
-    @Before
-    public void setUp()   {
-        System.setProperty("Webdriver.chrome.driver", "C:\\Users\\rid90\\IdeaProjects\\mavenProject\\drivers\\chromedriver\\chromedriver.exe");//запуск драйвера для браузера
-        driver = new ChromeDriver();//запуск браузера
-        driver.manage().window().setSize(new Dimension(1394, 816));
-        driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);//Установка задержки для загрузки страницы
-        driver.get("https://habr.com/ru/articles/");//Открытие страницы сайта
-        js = (JavascriptExecutor) driver;
-        vars = new HashMap<String, Object>();
-    }
 
     @Test
     public void testGroup() {
@@ -124,8 +105,5 @@ public class Test1 {
         }
 
     }
-    @After
-    public void tearDown() {
-        driver.quit();
-    }
+
 }
