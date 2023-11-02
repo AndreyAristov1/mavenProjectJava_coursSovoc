@@ -80,5 +80,38 @@ public class NavigationHelper {
             Actions builder = new Actions(driver);
             builder.moveToElement(element, 0, 0).perform();
         }
+
+
+    }
+
+    public  void authorization() {
+        driver.findElement(By.name("username")).click();
+        driver.findElement(By.name("username")).sendKeys("rid90@inbox.ru");
+        driver.findElement(By.xpath("//span[text() = \"Ввести пароль\"]")).click();
+        driver.findElement(By.name("password")).sendKeys("Russia88!");
+        driver.findElement(By.cssSelector(".innerTextWrapper-0-2-90:nth-child(1)")).click();
+        driver.findElement(By.cssSelector(".innerTextWrapper-0-2-90:nth-child(1)")).click();
+
+
+        {
+            WebElement element = driver.findElement(By.cssSelector(".llc:nth-child(8) .ll-sp__normal"));
+            Actions builder = new Actions(driver);
+            builder.moveToElement(element).perform();
+        }
+        {
+            WebElement element = driver.findElement(By.tagName("body"));
+            Actions builder = new Actions(driver);
+            builder.moveToElement(element, 0, 0).perform();
+        }
+    }
+
+    public  void goToContacts(){
+        driver.findElement(By.xpath("//*[@id=\"ph-whiteline\"]/div/nav/ul/li[6]/a")).click();
+    }
+    public void goToGroupTest(){
+        for (String windowHandle : driver.getWindowHandles()) {
+            driver.switchTo().window(windowHandle);
+        }
+        driver.findElement(By.xpath("//*[@id=\"root\"]/div/span/div[1]/div[2]/a[4]")).click();
     }
 }

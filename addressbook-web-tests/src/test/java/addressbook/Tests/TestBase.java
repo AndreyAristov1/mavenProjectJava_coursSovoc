@@ -12,6 +12,12 @@ public class TestBase {
 
     protected final ApplicationManager app = new ApplicationManager();
 
+    public  void login() {
+        app.authorization();
+    }
+
+
+
     @Before
     public void setUp()   {
          app.init();
@@ -22,9 +28,9 @@ public class TestBase {
         app.stop();
     }
 
-    public void GroupCreation() {
+  /*  public void GroupCreation() {
         app.click();
-    }
+    }*/
 
 
 }
