@@ -1,6 +1,7 @@
 package addressbook.appmanager;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -85,7 +86,19 @@ public class NavigationHelper {
     }
 
     public  void authorization() {
+
+
         driver.findElement(By.name("username")).click();
+
+       //Пример проверки перед заполением поля
+        /*if (text != null){
+            String existingText = driver.findElement("username").getAttribute("value");
+            if(! text.equals(existingText)){
+                driver.findElement(By.name("username")).sendKeys("rid90@inbox.ru");
+
+            }
+        }*/
+
         driver.findElement(By.name("username")).sendKeys("rid90@inbox.ru");
         driver.findElement(By.xpath("//span[text() = \"Ввести пароль\"]")).click();
         driver.findElement(By.name("password")).sendKeys("Russia88!");
@@ -105,4 +118,15 @@ public class NavigationHelper {
         }
         driver.findElement(By.xpath("//*[@id=\"root\"]/div/span/div[1]/div[2]/a[4]")).click();
     }
+
+    //Переключение на алерт
+  /*  public  boolean isAlertPresent(){
+        try{ // Переключись на алерт и верни тру
+            driver.switchTo().alert();
+            return true;
+        }catch (NoAlertPresentException e){//А если не получится верни фолс
+            return false;
+        }
+
+    }*/
 }
