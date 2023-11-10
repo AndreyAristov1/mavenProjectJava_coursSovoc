@@ -110,8 +110,21 @@ public class NavigationHelper {
     }
 
     public  void goToContacts(){
+        //Проверка нахождения на нужной странице перед кликом
+       /* if(isElementPresent(By.tagName("h1"))
+                && driver.findElement(By.tagName("h1")).getText().equals("Контакты")
+                && isElementPresent(By.xpath("//span[text()=\"Добавить контакт\"]"))){
+
+            return;//Если не нашлось выходим
+        }
+//Если нашлось тапаем*/
         driver.findElement(By.xpath("//a[text()= \"Контакты\"]")).click();
     }
+
+    /*private boolean isElementPresent(By h1) {
+        return true;
+    }*/
+
     public void goToGroupTest(){
         for (String windowHandle : driver.getWindowHandles()) {
             driver.switchTo().window(windowHandle);
