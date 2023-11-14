@@ -135,12 +135,13 @@ public class NavigationHelper {
         }
         driver.findElement(By.xpath("//*[@id=\"root\"]/div/span/div[1]/div[2]/a[4]")).click();
     }
-
+//Проверка на наличие кнопки редактировать группу
     public void ModificationTest(){
-
+//Наведение курсора на элемент
         WebElement link = driver.findElement(By.xpath("//*[@id=\"root\"]/div/span/div[1]/div[2]/a[4]/div"));
         Actions actions = new Actions(driver);
         actions.moveToElement(link).build().perform();
+        //Проверка на налицие всплывающего элемента
         WebElement Edite = null;
         try {
             Edite = driver.findElement(By.xpath("//*[@id=\"root\"]/div/span/div[1]/div[2]/a[4]/div/div\n"));
