@@ -153,7 +153,11 @@ public class NavigationHelper {
     //Переключение на алерт
     public  boolean isAlertPresent(){
         try{ // Переключись на алерт и верни тру
-            driver.switchTo().alert();
+            try{ //Задержка перед тапом на ок
+                Thread.sleep(3000);
+            }catch (InterruptedException e) {
+                e.printStackTrace();
+            }driver.switchTo().alert().accept();
             return true;
         }catch (NoAlertPresentException e){//А если не получится верни фолс
             return false;
