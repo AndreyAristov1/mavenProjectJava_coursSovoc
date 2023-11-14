@@ -38,4 +38,7 @@ public void goToContacts(){
 public void goToGroupTest(){
     gH.goToGroupTest();
 }
+public void GroupCreation(){
+ gH.GroupCreation();
+}
 }

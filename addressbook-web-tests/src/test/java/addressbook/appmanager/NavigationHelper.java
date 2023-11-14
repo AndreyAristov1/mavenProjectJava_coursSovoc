@@ -133,7 +133,7 @@ public class NavigationHelper {
     }
 
     //Переключение на алерт
-  /*  public  boolean isAlertPresent(){
+    public  boolean isAlertPresent(){
         try{ // Переключись на алерт и верни тру
             driver.switchTo().alert();
             return true;
@@ -141,5 +141,11 @@ public class NavigationHelper {
             return false;
         }
 
-    }*/
+    }
+    public void  GroupCreation(){
+        driver.findElement(By.cssSelector(".secondary-2-2-18 > .innerTextWrapper-2-2-4")).click();
+        isAlertPresent();
+        driver.findElement(By.cssSelector(".focus-2-2-37 .input-2-2-47")).sendKeys("Test");
+        driver.findElement(By.cssSelector(".primary-2-2-15 > .inner-2-2-3")).click();
+    }
 }

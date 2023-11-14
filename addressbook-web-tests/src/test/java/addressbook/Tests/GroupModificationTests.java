@@ -10,6 +10,7 @@ public class GroupModificationTests extends TestBase {
    app.goToContacts();
    app.goToGroupTest();
 
+
     }
 
 
