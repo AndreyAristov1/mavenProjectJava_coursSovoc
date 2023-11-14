@@ -9,6 +9,7 @@ public class GroupModificationTests extends TestBase {
         login();
    app.goToContacts();
    app.goToGroupTest();
+   app.ModificationTest();
 
 
     }

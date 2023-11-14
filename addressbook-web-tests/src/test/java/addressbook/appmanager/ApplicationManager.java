@@ -40,5 +40,9 @@ public void goToGroupTest(){
 }
 public void GroupCreation(){
  gH.GroupCreation();
+
 }
+    public void ModificationTest(){
+        gH.ModificationTest();
+    }
 }

@@ -4,7 +4,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+
+import static org.junit.Assert.assertTrue;
 
 public class NavigationHelper {
     public WebDriver driver;
@@ -132,6 +136,19 @@ public class NavigationHelper {
         driver.findElement(By.xpath("//*[@id=\"root\"]/div/span/div[1]/div[2]/a[4]")).click();
     }
 
+    public void ModificationTest(){
+
+        WebElement link = driver.findElement(By.xpath("//*[@id=\"root\"]/div/span/div[1]/div[2]/a[4]/div"));
+        Actions actions = new Actions(driver);
+        actions.moveToElement(link).build().perform();
+        WebElement Edite = null;
+        try {
+            Edite = driver.findElement(By.xpath("//*[@id=\"root\"]/div/span/div[1]/div[2]/a[4]/div/div\n"));
+        }catch (TimeoutException e){
+            assertTrue(false);
+        }
+        assertTrue(Edite != null );
+    }
     //Переключение на алерт
     public  boolean isAlertPresent(){
         try{ // Переключись на алерт и верни тру
