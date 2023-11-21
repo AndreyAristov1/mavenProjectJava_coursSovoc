@@ -133,7 +133,9 @@ public class NavigationHelper {
         for (String windowHandle : driver.getWindowHandles()) {
             driver.switchTo().window(windowHandle);
         }
+
         driver.findElement(By.xpath("//*[@id=\"root\"]/div/span/div[1]/div[2]/a[4]")).click();
+
     }
 //Проверка на наличие кнопки редактировать группу
     public void ModificationTest(){
