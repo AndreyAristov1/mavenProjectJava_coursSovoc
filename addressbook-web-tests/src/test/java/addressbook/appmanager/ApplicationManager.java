@@ -41,7 +41,11 @@ public void goToGroupTest(){
 public void GroupCreation(){
  gH.GroupCreation();
 
-}
+    }
+    public void SelectGroup() {
+        gH.selectGroup(5);
+    }
+
     public void ModificationTest(){
         nH.ModificationTest();
     }

@@ -13,6 +13,7 @@ public class GroupDeletionTest extends TestBase {
             app.GroupCreation();
 
         }
+        app.SelectGroup();
         //Добавить метод удаления группы
     }
 }

@@ -26,7 +26,7 @@ public class GroupHelper {
         return isElementPresent(By.xpath("//*[@id=\"root\"]/div/span/div[1]/div[2]/a[4]/div"));
     }
 
-    private boolean isElementPresent(By xpath) {
+    private boolean isElementPresent(By xpath) {//Переключение на алерт
         try { // Переключись на алерт и верни тру
             driver.findElement(By.xpath("//*[@id=\"root\"]/div/span/div[1]/div[2]/a[4]/div"));
 
@@ -35,4 +35,8 @@ public class GroupHelper {
             return false;
         }
     }
+    public void selectGroup(int index){//Выбор элемента по индексу из массива
+        driver.findElements(By.name("Указать локатор элементов")).get(index).click();//Клик по элементу с указанным индексом
+    }
+
 }
