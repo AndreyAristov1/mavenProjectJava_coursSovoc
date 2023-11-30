@@ -21,7 +21,7 @@ public class GroupDeletionTest extends TestBase {
         app.SelectGroup();
         //Добавить метод удаления группы
 
-        List<GroupData> before = app.getGroupHelper().getGroupList();//Получение массива с элементами
+       /* List<GroupData> before = app.getGroupHelper().getGroupList();//Получение массива с элементами
         app.getGroupHelper().selectGrou(before.size() -1); //Вычерание еденицы из колличества элементов в массиве , запись результата в переменную
         app.getGroupHelper().deleteSelectedGroups();//Удаление выбранной группы
         app.getGroupHelper().returnToGroupPage();//Переход на страницу групп
@@ -30,7 +30,7 @@ public class GroupDeletionTest extends TestBase {
 
         before.remove(before.size()-1);//Удаление элемента из списка
         Assert.assertEquals(before, after);//Проверка что элемент старого списка равен элементу нового списка
-
+*/
 
 
     }

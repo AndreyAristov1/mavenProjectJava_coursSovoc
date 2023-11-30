@@ -1,7 +1,7 @@
 package addressbook.model;
 
 public class GroupData {
-    @Override //Позволяет выводить текст элементов при скравнение элементов в массиве а не их номер в ячейке памяти
+  /*  @Override //Позволяет выводить текст элементов при скравнение элементов в массиве а не их номер в ячейке памяти
     public String toString() {
         return "GroupData{" +
                 "name='" + name +'\''+
@@ -16,5 +16,5 @@ public class GroupData {
         return name != null ? name.equals(groupData.name) : groupData.name == null;
     }
 
-
+*/
 }
