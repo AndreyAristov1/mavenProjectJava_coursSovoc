@@ -31,7 +31,7 @@ public class GroupCreationTests extends TestBase {
              max = g.getId();
             }
         }*/
-
+            //Поиск элемента с максимальным идентефекатором при помощи лямпба выражения
        // int max = after.stream().max((o1, o2) -> integer.compare(o1.getId(), o2.getId())).get().getId();
 
 /*
