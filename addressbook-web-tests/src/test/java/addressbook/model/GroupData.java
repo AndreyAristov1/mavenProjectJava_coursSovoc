@@ -2,17 +2,17 @@ package addressbook.model;
 
 public class GroupData {
 
-    private int id = integer.MAX_VALUE;
+    //private int id = integer.MAX_VALUE;
     private  String name;
     private  String header;
     private  String footer;
 
 
 
-        public int getId(){return id;}
+     //   public int getId(){return id;}
     //Сетеры
     public GroupData withId(int id){
-        this.id = id;
+      //  this.id = id;
         return this;
     }
     public GroupData withName(String name) {

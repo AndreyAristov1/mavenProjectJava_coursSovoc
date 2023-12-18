@@ -44,6 +44,12 @@
             <version>4.13.2</version>
         </dependency>
 
+        <dependency>
+            <groupId>io.github.awsjavakit</groupId>
+            <artifactId>hamcrest</artifactId>
+            <version>0.9.3</version>
+        </dependency>
+
     </dependencies>
 
 
