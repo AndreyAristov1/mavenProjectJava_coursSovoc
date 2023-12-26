@@ -1,6 +1,7 @@
 package generation;
 
 import addressbook.model.GroupData;
+import org.junit.runners.Parameterized;
 
 import  java.io.File;
 import java.io.FileWriter;
@@ -11,17 +12,46 @@ import java.util.List;
 
 public class GroupDataGenerator {
 
-    public static void main(String[] args) throws IOException {
+    @Parameterized.Parameter(names = "-c", description ="Group count")
+    public int count;
+
+    @Parameterized.Parameter(names ="-f", description ="Target file")
+    public String file;
+
+    public static <JCommander> void main(String[] args) throws IOException {
+        GroupDataGenerator generator = new GroupDataGenerator();
+       JCommander jCommander = new JCommander(generator);
         int count = integer.parseInt(args[0]);//Передаём колличество групп/ Параметры указываются в настройках конфигураций и + путь к файлу
         File file = new File (args[1]); //Передаём файл
 
-      //Генерация данных
-        List<GroupData> groups = generateGroups(count);
-      //Сохранение данных в файл
-save(groups, file);
+        try {
+            JCommander.parse(args);
+
+        } catch (ParameterException ex){
+            jCommander.usage();
+            return;
+        }
+        generator.run();
     }
-//Сохранение в файл
-    private static void save(List<GroupData> groups, File file) throws IOException {
+        private void run() throws IOException {
+
+
+            //Генерация данных
+            List<GroupData> groups = generateGroups(count);
+            //Сохранение данных в файл
+            save(groups, new File(file));
+
+
+    }
+
+
+
+
+
+
+
+    //Сохранение в файл
+    private void save(List<GroupData> groups, File file) throws IOException {
         Writer writer = new FileWriter(file);
         for (GroupData group : groups){
             writer.write(String.format("%s; %s;%s\n",group.getName(),group.getHeader(),group.getFooter()));
@@ -32,7 +62,7 @@ save(groups, file);
     }
 
     //Генерация данных
-    private static List<GroupData> generateGroups(int count) {
+    private List<GroupData> generateGroups(int count) {
 
         List<GroupData> groups = new ArrayList<GroupData>();
         for (int i=0;i<count; i++){
