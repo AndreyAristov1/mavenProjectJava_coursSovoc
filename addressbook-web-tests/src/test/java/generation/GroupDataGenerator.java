@@ -48,8 +48,7 @@ public class GroupDataGenerator {
 
 
 
-
-
+    
     //Сохранение в файл
     private void save(List<GroupData> groups, File file) throws IOException {
         Writer writer = new FileWriter(file);
