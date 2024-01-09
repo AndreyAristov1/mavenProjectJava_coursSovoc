@@ -38,15 +38,29 @@ public class GroupDataGenerator {
 
             //Генерация данных
             List<GroupData> groups = generateGroups(count);
-            //Сохранение данных в файл
+            
+            //Сохранение данных в формате csv
+            if(format.equsls("csv")){
+                saveAsCsv(groups, new File(file));
+            }//Сохранение данных в формате xml
+            else if(format.equsls("xml")) {
+                saveAsXml(groups, new File(file));
+            }  //Сохранение данных в формате json
+            else  if(format.equsls("json")) {
+                saveAsJson(groups, new File(file));
+            }//Сохранение данных в файл
             save(groups, new File(file));
+            
 
 
     }
 
-
-
-
+    private void saveAsCsv(List<GroupData> groups, File file) {
+    }
+    private void saveAsXml(List<GroupData> groups, File file) {
+    }
+    private void saveAsJson(List<GroupData> groups, File file) {
+    }
 
 
     //Сохранение в файл
