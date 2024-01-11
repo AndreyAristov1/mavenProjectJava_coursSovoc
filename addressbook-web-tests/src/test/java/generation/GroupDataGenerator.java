@@ -17,6 +17,7 @@ public class GroupDataGenerator {
 
     @Parameterized.Parameter(names ="-f", description ="Target file")
     public String file;
+    private Object format;
 
     public static <JCommander> void main(String[] args) throws IOException {
         GroupDataGenerator generator = new GroupDataGenerator();
@@ -40,13 +41,13 @@ public class GroupDataGenerator {
             List<GroupData> groups = generateGroups(count);
             
             //Сохранение данных в формате csv
-            if(format.equsls("csv")){
+            if(format.equals("csv")){
                 saveAsCsv(groups, new File(file));
             }//Сохранение данных в формате xml
-            else if(format.equsls("xml")) {
+            else if(format.equals("xml")) {
                 saveAsXml(groups, new File(file));
             }  //Сохранение данных в формате json
-            else  if(format.equsls("json")) {
+            else  if(format.equals("json")) {
                 saveAsJson(groups, new File(file));
             }//Сохранение данных в файл
             save(groups, new File(file));
@@ -58,8 +59,19 @@ public class GroupDataGenerator {
     private void saveAsCsv(List<GroupData> groups, File file) {
     }
     private void saveAsXml(List<GroupData> groups, File file) {
+    XStream xstrean = new XStream();
+    xstrean.processAnotations(GroupData.class);
+        String xml = xstrean.toXML(groups);
+        Writer writer = new FileWriter(file);
+        writer.write(xml);
+        writer.close();
     }
-    private void saveAsJson(List<GroupData> groups, File file) {
+    private void saveAsJson(List<GroupData> groups, File file) throws IOException{
+      Gson gson = new GsonBuilder().setPrettyPrinting().create();
+      String json = Gson.toJson(groups);
+      Writer writer = new FileWriter(file);
+      writer.write(json);
+      writer.close();
     }
 
 
@@ -86,5 +98,9 @@ public class GroupDataGenerator {
         }
         return groups;
 
+    }
+
+    public void setFormat(Object format) {
+        this.format = format;
     }
 }
