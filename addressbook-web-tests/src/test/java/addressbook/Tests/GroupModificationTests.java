@@ -5,8 +5,7 @@ import org.junit.Test;
 import sandbox.Collections;
 
 import java.util.Comparator;
-
-/*public class GroupModificationTests extends TestBase {
+public class GroupModificationTests extends TestBase {
 
     @Test
     public void testGroupModification() {
@@ -30,5 +29,5 @@ import java.util.Comparator;
 
 
 }
-*/
+
 
