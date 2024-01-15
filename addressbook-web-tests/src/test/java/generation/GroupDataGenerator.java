@@ -10,7 +10,7 @@ import java.io.Writer;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GroupDataGenerator {
+/*public class GroupDataGenerator {
 
     @Parameterized.Parameter(names = "-c", description ="Group count")
     public int count;
@@ -112,3 +112,4 @@ public class GroupDataGenerator {
         this.format = format;
     }
 }
+*/

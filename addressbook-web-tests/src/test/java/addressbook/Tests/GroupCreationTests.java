@@ -5,18 +5,26 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Comparator;
 
 public class GroupCreationTests extends TestBase {
 
     public WebDriver driver;
+    //Выведение логов в файл
+    Logger logger = LoggerFactory.getLogger(GroupCreationTests.class);
 
     @Test
+
     public void testGroupCreation() {
+
         app.authorization();
         app.goToContacts();
         app.goToGroupTest();
+
+
 
       /*  int before = app.getGroupHelper().getGroupCount();//Количество групп до добавление новой
         app.GroupCreation();
