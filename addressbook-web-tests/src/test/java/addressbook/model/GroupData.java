@@ -1,10 +1,24 @@
 package addressbook.model;
 
-public class GroupData {
+import org.checkerframework.checker.signature.qual.Identifier;
 
-    //private int id = integer.MAX_VALUE;
+@XSrtreamAlias("group")
+@Entity
+@Table(name = "group list")
+public class GroupData {
+@XStreamOmitField
+@Id
+@Column(name = "group_id")
+
+    private int id = integer.MAX_VALUE;
+@Expose
+@Column( name = "group_name")
     private  String name;
+    @Expose
+    @Column( name = "group_header")
     private  String header;
+    @Expose
+    @Column( name = "group_footer")
     private  String footer;
 
 
