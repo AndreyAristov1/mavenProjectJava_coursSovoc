@@ -26,7 +26,7 @@ public class HbConectionTest {
             StandardServiceRegistryBuilder.destroy( registry );
         }
     }
-
+//Получение информации по Группам
     @Test
     public void  testHbConnection(){
 
