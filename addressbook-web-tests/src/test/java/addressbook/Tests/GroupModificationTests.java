@@ -1,6 +1,7 @@
 package addressbook.Tests;
 
 import addressbook.model.GroupData;
+import addressbook.model.Groups;
 import org.junit.Test;
 import sandbox.Collections;
 
@@ -26,8 +27,28 @@ public class GroupModificationTests extends TestBase {
     Assert.assertEquals(before, after);
 */
 
+//Иная реализация
+    /*@BeforeMethod
+    public void ensurePreconditions() {
+        app.goTo().groupPsge();
+        if (app.group() / all().size() == 0) {
+            app.group().create(new GroupData().withName("test1"));
+        }
+    }
 
+    @Test
 
+    public void testGroupModification(){
+        Groups before = app.group().all();
+        GroupData modifiedGroup =before.iterator.next();
+        GroupData group = new GroupData()
+                .withId(modifiedGroup.getId()).withName("test1").withHeader("test2").withFooter("test3");
+        app.group().modify(group);
+        assertThat(app.group().count(), equalTo(before.size()));
+        Groups after = app.group().all();
+        assertThat(after, equalTo(before.without(modifiedGroup).withAdded(group)));
+
+    }*/
 }
 
 
